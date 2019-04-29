@@ -1,36 +1,17 @@
 import { Component, Input } from '@angular/core';
+import { GridConfiguration } from './grid.types';
 
 @Component({
   selector: 'vss-grid',
   templateUrl: './grid.component.html',
-  styleUrls: [ './grid.component.css' ]
+  styleUrls: ['./grid.component.css']
 })
-export class VSSGridComponent  {
-
+export class VSSGridComponent {
   @Input() configuration: GridConfiguration;
 
   @Input() data: any;
 
-  // displayedColumns: string[] = ['name', 'weight', 'symbol', 'position'];
-  // columnsToDisplay: string[] = this.displayedColumns.slice();
-
-  
-}
-
-export class GridConfiguration {
-  columnDefinitions: GridColumns[];
-}
-
-export class GridColumns {
-  name: string;
-  sort: SortDirection;
-  visible: boolean = true;
-  pinned: boolean = false;
-  width: number;
-}
-
-export enum SortDirection {
-  None,
-  Ascending,
-  Descending
+  get columnOptions(): string[] {
+    return this.configuration.columnDefinitions.map(x => x.name);
+  }
 }

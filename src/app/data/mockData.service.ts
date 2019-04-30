@@ -12,24 +12,28 @@ export class DataService {
   getConfiguration(): GridConfiguration {
     const columns: GridColumn[] = [
       {
-        name: 'assetUID',
+        name: 'assetUid',
         sort: SortDirection.None,
+        label: 'Asset UID',
         pinned: true,
         width: 200
       },
       {
         name: 'assetSerialNumber',
         sort: SortDirection.None,
+        label: 'Asset Serial Number',
         pinned: true
       },
       {
         name: 'switchName',
         sort: SortDirection.Ascending,
+        label: 'Switch Name',
         pinned: true
       },
       {
         name: 'switchState',
         sort: SortDirection.Ascending,
+        label: 'Switch State',
         pinned: true
       }
     ];

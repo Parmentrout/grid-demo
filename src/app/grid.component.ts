@@ -11,7 +11,8 @@ export class VSSGridComponent {
 
   @Input() data: any;
 
-  get columnOptions(): string[] {
-    return this.configuration.columnDefinitions.map(x => x.name);
+  get columnsToDisplay(): string[] {
+    return ['assetUid'];
+    //return this.configuration.columnDefinitions.map(x => x.name);
   }
 }

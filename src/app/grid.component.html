@@ -1,7 +1,11 @@
 <table mat-table [dataSource]="data" class="mat-elevation-z8">
-  <ng-container [matColumnDef]="column.name" *ngFor="let column of configuration.columnOptions">
+  <!-- <ng-container [matColumnDef]="column.name" *ngFor="let column of configuration.columnOptions">
     <th mat-header-cell *matHeaderCellDef>{{ column.name }}</th>
     <td mat-cell *matCellDef="let element">{{ element[column.name] }}</td>
+  </ng-container> -->
+  <ng-container matColumnDef="assetUid">
+    <th mat-header-cell *matHeaderCellDef>Asset UID</th>
+    <td mat-cell *matCellDef="let element">{{ element.assetUID }}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>

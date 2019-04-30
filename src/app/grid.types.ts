@@ -4,6 +4,7 @@ export class GridConfiguration {
 
 export class GridColumn {
   name: string;
+  label: string;
   sort: SortDirection;
   visible?: boolean = true;
   pinned?: boolean = false;

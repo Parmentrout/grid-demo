@@ -1,5 +1,7 @@
 export class GridConfiguration {
   columnDefinitions: GridColumn[];
+  pageSize?: number;
+  page
 }
 
 export class GridColumn {

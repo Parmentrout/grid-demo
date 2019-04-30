@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
 import { GridConfiguration, GridColumn, SortDirection } from '../grid.types';
-import { stringify } from 'querystring';
 
 @Injectable()
 export class DataService {
@@ -12,7 +10,7 @@ export class DataService {
   getConfiguration(): GridConfiguration {
     const columns: GridColumn[] = [
       {
-        name: 'assetUid',
+        name: 'assetUID',
         sort: SortDirection.None,
         label: 'Asset UID',
         pinned: true,

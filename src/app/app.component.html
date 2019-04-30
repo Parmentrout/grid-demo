@@ -1,5 +1,5 @@
 <h1>Welcome to The House of Pancakes</h1>
 
 <div class="container">
-  <vss-grid [data]="data.assetSwitchEvents" [configuration]="configuration"></vss-grid>
+  <vss-grid [data]="data | async" [configuration]="configuration"></vss-grid>
 </div>

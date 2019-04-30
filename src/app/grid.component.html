@@ -1,6 +1,6 @@
-<table mat-table [dataSource]="gridData" class="mat-elevation-z8">
+<table mat-table [dataSource]="gridData" matSort class="mat-elevation-z8">
   <ng-container [matColumnDef]="column.name" *ngFor="let column of configuration.columnDefinitions">
-    <th mat-header-cell *matHeaderCellDef>{{ column.label }}</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.label }}</th>
     <td mat-cell *matCellDef="let element">
       <span [innerHtml]="element[column.name]"></span>
     </td>

@@ -18,3 +18,13 @@ export enum SortDirection {
   Ascending,
   Descending
 }
+
+export interface IGridData {
+  [key: string]: string | number;
+}
+
+declare type MyType = {
+  name: string;
+  label: string;
+  sort: SortDirection;
+};

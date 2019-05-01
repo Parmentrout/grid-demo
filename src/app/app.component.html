@@ -1,5 +1,9 @@
 <h1>Welcome to The House of Pancakes</h1>
 
 <div class="container">
+  <h3>Grid Configuration:</h3>
+  <div>{{ configuration | json }}</div>
+  <br />
+
   <vss-grid [data]="data | async" [configuration]="configuration"></vss-grid>
 </div>

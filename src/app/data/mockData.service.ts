@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GridConfiguration, GridColumn, SortDirection } from '../grid.types';
+import { GridConfiguration, GridColumn } from '../grid.types';
 import { of, Observable } from 'rxjs';
 
 @Injectable()
@@ -12,32 +12,27 @@ export class DataService {
     const columns: GridColumn[] = [
       {
         name: 'assetIcon',
-        sort: SortDirection.None,
         label: '',
         pinned: true
       },
       {
         name: 'assetSerialNumber',
-        sort: SortDirection.None,
         label: 'Asset Serial Number',
         pinned: true
       },
       {
         name: 'odometer',
-        sort: SortDirection.None,
         label: 'Odometer',
         pinned: true,
         width: 200
       },
       {
         name: 'switchName',
-        sort: SortDirection.Ascending,
         label: 'Switch Name',
         pinned: true
       },
       {
         name: 'switchState',
-        sort: SortDirection.Ascending,
         label: 'Switch State',
         pinned: true
       }
@@ -45,6 +40,8 @@ export class DataService {
 
     const configuration = new GridConfiguration();
     configuration.columnDefinitions = columns;
+    configuration.sortColumn = 'assetSerialNumber';
+    configuration.sortDirection = 'asc';
     return configuration;
   }
 }

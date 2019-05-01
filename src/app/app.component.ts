@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from './data/mockData.service';
 import { Observable } from 'rxjs';
 import { GridConfiguration } from './grid.types';

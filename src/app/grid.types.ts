@@ -2,8 +2,10 @@ export class GridConfiguration {
   columnDefinitions: GridColumn[];
   pageSize?: number;
   pageNumber?: number;
+  totalSize?: number;
   sortColumn?: string;
   sortDirection?: 'asc' | 'desc';
+  selectionEnabled?: boolean = false;
 }
 
 export class GridColumn {

@@ -1,8 +1,9 @@
-import { Component, Input, ViewChild, OnInit } from '@angular/core';
+import { Component, Input, ViewChild, OnInit, Output, EventEmitter } from '@angular/core';
 import { GridConfiguration, IGridData } from './grid.types';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, MatSortable } from '@angular/material/sort';
 import { config } from 'rxjs';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'vss-grid',
@@ -34,13 +35,13 @@ export class VSSGridComponent implements OnInit {
   }
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   get columnsToDisplay(): string[] {
     return this.configuration.columnDefinitions.map(x => x.name);
   }
 
   ngOnInit(): void {
-    // this.sort.sort(<MatSortable>{ id: 'assetSerialNumber', start: 'asc' });
     this._dataSource.sort = this.sort;
   }
 

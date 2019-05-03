@@ -1,9 +1,17 @@
-<h1>Welcome to The House of Pancakes</h1>
+<h1>Grid Options</h1>
 
 <div class="container">
-  <h3>Grid Configuration:</h3>
+  <!-- <h3>Grid Configuration:</h3>
   <div>{{ configuration | json }}</div>
-  <br />
+  <br /> -->
 
-  <vss-grid [data]="data | async" [configuration]="configuration"></vss-grid>
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab label="AG - Grid">
+      <app-ag-grid-demo [data]="data | async"></app-ag-grid-demo>
+    </mat-tab>
+    <mat-tab label="Second">Content 2</mat-tab>
+    <mat-tab label="Material Table">
+      <vss-grid [data]="data | async" [configuration]="configuration"></vss-grid>
+    </mat-tab>
+  </mat-tab-group>
 </div>

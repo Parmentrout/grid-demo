@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GridConfiguration, GridColumn } from '../grid.types';
+import { GridConfiguration, GridColumn } from '../material-grid/grid.types';
 import { of, Observable } from 'rxjs';
 
 @Injectable()

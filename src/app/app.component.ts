@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from './data/mockData.service';
 import { Observable } from 'rxjs';
-import { GridConfiguration } from './grid.types';
+import { GridConfiguration } from './material-grid/grid.types';
 import { map } from 'rxjs/operators';
-import { VSSGridComponent } from './grid.component';
+import { VSSGridComponent } from './material-grid/grid.component';
 
 @Component({
   selector: 'my-app',

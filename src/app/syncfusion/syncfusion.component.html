@@ -1,0 +1,15 @@
+<ejs-grid
+  [dataSource]="rowData"
+  [allowReordering]="true"
+  [allowPaging]="true"
+  [allowSorting]="true"
+  [showColumnChooser]="true"
+  [pageSettings]="pageSettings"
+>
+  <e-columns>
+    <e-column field="assetUID" headerText="Asset ID" textAlign="Right" width="90"></e-column>
+    <e-column field="assetSerialNumber" headerText="Serial Number" width="120"></e-column>
+    <e-column field="switchName" headerText="Switch Name" textAlign="Right" format="C2" width="90"></e-column>
+    <e-column field="switchState" headerText="Switch State" textAlign="Right" format="yMd" width="120"></e-column>
+  </e-columns>
+</ejs-grid>

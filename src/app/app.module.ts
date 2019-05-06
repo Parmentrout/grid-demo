@@ -13,6 +13,12 @@ import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { SyncfusionComponent } from './syncfusion/syncfusion.component';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CdkTableModule } from '@angular/cdk/table';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import { A11yModule } from '@angular/cdk/a11y';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -22,6 +28,11 @@ import { SyncfusionComponent } from './syncfusion/syncfusion.component';
     MatTableModule,
     MatSortModule,
     MatTabsModule,
+    DragDropModule,
+    ScrollingModule,
+    CdkTableModule,
+    CdkTreeModule,
+    A11yModule,
     AgGridModule.withComponents([])
   ],
   declarations: [AppComponent, VSSGridComponent, AgGridDemoComponent, SyncfusionComponent],

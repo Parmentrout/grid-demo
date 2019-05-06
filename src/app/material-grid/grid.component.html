@@ -4,14 +4,27 @@
     [sticky]="configuration.pinned"
     *ngFor="let column of configuration.columnDefinitions"
   >
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.label }}</th>
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      cdkDropList
+      cdkDropListLockAxis="x"
+      cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="dropListDropped($event, i)"
+      cdkDrag
+      (cdkDragStarted)="dragStarted($event, i)"
+      [cdkDragData]="{ name: column.name, columnIndex: i }"
+    >
+      {{ column.label }}
+    </th>
     <td mat-cell *matCellDef="let element">
       <span [innerHtml]="element[column.name]"></span>
     </td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 
 <h3>Limitations</h3>

@@ -8,9 +8,8 @@ import { IGridData } from '../material-grid/grid.types';
 })
 export class AgGridDemoComponent implements OnInit {
   columnDefs = [
-    { headerName: '', field: 'assetIcon', type: 'html', pinned: true },
     { headerName: 'Asset ID', field: 'assetUID', pinned: true },
-    { headerName: 'Serial Number', field: 'assetSerialNumber' },
+    { headerName: 'Serial Number', field: 'assetSerialNumber', sortable: true, sort: 'asc' },
     { headerName: 'Switch Name', field: 'switchName' },
     { headerName: 'Switch State', field: 'switchState' },
     { headerName: 'Odometer', field: 'odometer' }
@@ -27,4 +26,9 @@ export class AgGridDemoComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  renderHtml(params) {
+    // put the value in bold
+    return 'Value is <b>' + params.value + '</b>';
+  }
 }

@@ -10,32 +10,31 @@ import { MatSortModule } from '@angular/material/sort';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgGridModule } from 'ag-grid-angular';
 import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
-import { GridModule } from '@syncfusion/ej2-angular-grids';
-import { SyncfusionComponent } from './syncfusion/syncfusion.component';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { A11yModule } from '@angular/cdk/a11y';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    GridModule,
     MatTableModule,
     MatSortModule,
     MatTabsModule,
     DragDropModule,
+    HttpClientModule,
     ScrollingModule,
     CdkTableModule,
     CdkTreeModule,
     A11yModule,
     AgGridModule.withComponents([])
   ],
-  declarations: [AppComponent, VSSGridComponent, AgGridDemoComponent, SyncfusionComponent],
+  declarations: [AppComponent, VSSGridComponent, AgGridDemoComponent],
   providers: [DataService],
   bootstrap: [AppComponent]
 })

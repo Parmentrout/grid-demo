@@ -1,6 +1,23 @@
 <ag-grid-angular
   style="width: 1000px; height: 500px;"
+  #agGrid
   class="ag-theme-material"
+  id="myGrid"
+  [defaultColDef]="defaultColDef"
+  [components]="components"
+  [debug]="true"
+  [rowSelection]="rowSelection"
+  [rowDeselection]="true"
+  [rowModelType]="rowModelType"
+  [cacheOverflowSize]="cacheOverflowSize"
+  [maxConcurrentDatasourceRequests]="maxConcurrentDatasourceRequests"
+  [infiniteInitialRowCount]="infiniteInitialRowCount"
+  [maxBlocksInCache]="maxBlocksInCache"
+  [pagination]="true"
+  [paginationPageSize]="paginationPageSize"
+  [cacheBlockSize]="cacheBlockSize"
+  [getRowNodeId]="getRowNodeId"
+  (gridReady)="onGridReady($event)"
   [rowData]="rowData"
   [columnDefs]="columnDefs"
 >
@@ -12,6 +29,5 @@
   <li>Custom sort objects to bypass client side sort</li>
   <li>Cellrenderer for anything more complex than text</li>
   <li>Drag drop, pin, resize</li>
-  <li>Pagination (server side $$)</li>
-  <li>Infinite scroll easy</li>
+  <li>Pagination and Infinite scroll configurable</li>
 </ul>

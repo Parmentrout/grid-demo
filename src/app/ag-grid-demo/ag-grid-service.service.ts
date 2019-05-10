@@ -13,7 +13,7 @@ export class AGGridService {
   getData(pageNumber: number, pageSize: number, sort: string = '', direction: string = ''): Observable<IGridResponse> {
     const httpOptions = {
       headers: new HttpHeaders({
-        Authorization: 'Bearer 59cc334bb424a22a144b9aa6c47c81d8',
+        Authorization: 'Bearer c635b74e7f4ea153ab705dc443d3dde1',
         'x-visionlink-customeruid': '8abcf851-44c5-e311-aa77-00505688274d'
       })
     };

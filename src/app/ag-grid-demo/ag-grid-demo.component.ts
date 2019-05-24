@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IGridData } from '../material-grid/grid.types';
 import { AGGridService } from './ag-grid-service.service';
 
 @Component({
@@ -11,6 +10,7 @@ export class AgGridDemoComponent implements OnInit {
   private gridApi;
   private gridColumnApi;
 
+  // Configurable
   columnDefs = [
     { headerName: 'Serial Number', field: 'assetSerialNumber', sortable: true },
     { headerName: 'Manufacturer', field: 'manufacturer' },
@@ -20,6 +20,7 @@ export class AgGridDemoComponent implements OnInit {
     { headerName: 'Status', field: 'status' },
     { headerName: 'Model Year', field: 'modelYear' }
   ];
+
   defaultColDef;
   components;
   rowSelection;
@@ -31,13 +32,9 @@ export class AgGridDemoComponent implements OnInit {
   paginationPageSize;
   cacheBlockSize;
   getRowNodeId;
-  rowData = [];
 
-  // @Input()
-  // set data(data: IGridData[]) {
-  //   //Verify that data matches contract, else throw error here
-  //   this.rowData = data;
-  // }
+  // Passed in data
+  rowData = [];
 
   constructor(private gridService: AGGridService) {
     this.defaultColDef = {
@@ -55,14 +52,20 @@ export class AgGridDemoComponent implements OnInit {
         }
       }
     };
+
     this.rowSelection = 'multiple';
     this.rowModelType = 'infinite';
+
+    // Let's keep these in the child components
     this.cacheOverflowSize = 2;
     this.maxConcurrentDatasourceRequests = 2;
     this.infiniteInitialRowCount = 1;
     this.maxBlocksInCache = 2;
-    this.paginationPageSize = 10;
     this.cacheBlockSize = 10;
+
+    // Configurable
+    this.paginationPageSize = 10;
+
     this.getRowNodeId = function(item) {
       return item.id;
     };
@@ -90,6 +93,10 @@ export class AgGridDemoComponent implements OnInit {
         }
         //Calculate page number here
         const pageNumber = params.endRow / this.paginationPageSize;
+
+        // Output here
+        // Event emitter to say page selected
+
         this.gridService.getData(pageNumber, this.paginationPageSize, filterColumn, direction).subscribe(results => {
           const fleetRecords = results.fleetRecords;
           params.successCallback(fleetRecords, results.pagination.totalCount);
